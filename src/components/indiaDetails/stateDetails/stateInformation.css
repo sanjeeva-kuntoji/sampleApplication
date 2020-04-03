@@ -1,0 +1,23 @@
+.card-title{
+    margin-bottom:6px;
+    margin-top: 6px;
+}
+
+.card {
+    background: white;
+  }
+.card:hover {
+    box-shadow: 0 0 11px rgba(134, 134, 134, 0.2); 
+    color: 'none';
+  }
+.details{
+    color:grey;
+}
+.title h5{
+    color: grey;
+    margin-top: 30px;
+    margin-bottom:15px;
+}
+.button{
+    background-color: rgb(230, 221, 221);
+}

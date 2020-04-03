@@ -1,0 +1,24 @@
+.indiaDist {
+    border: 1px solid rgb(0, 0, 0);
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .indiaDist td, .indiaDist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .indiaDist tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .indiaDist tr:hover {background-color: #ddd;}
+  
+  .indiaDist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(233, 36, 36);
+    color: white;
+  }
