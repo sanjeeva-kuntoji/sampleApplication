@@ -2,14 +2,14 @@ import React from "react";
 import "./districtDetails.css";
 class DistrictDetails extends React.Component {
   state = {
-    stateCovid: []
+    stateCovid: [],
   };
   componentDidMount() {
     fetch("https://api.covid19india.org/v2/state_district_wise.json")
-      .then(res => res.json())
-      .then(data =>
+      .then((res) => res.json())
+      .then((data) =>
         this.setState({
-          stateCovid: data
+          stateCovid: data,
         })
       );
   }
@@ -17,6 +17,7 @@ class DistrictDetails extends React.Component {
   render() {
     const { stateName } = this.props.location.state;
     let details = this.state.stateCovid;
+    console.log(details);
     return (
       <div>
         {details.map((contact, index) => {
@@ -28,7 +29,9 @@ class DistrictDetails extends React.Component {
                     <tr>
                       <th>SL NO</th>
                       <th>DISTRICT</th>
-                      <th>CONFIRMED</th>
+                      <th>Total Confirmed</th>
+                      <th>Active Cases</th>
+                      <th>Recovered</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -36,8 +39,10 @@ class DistrictDetails extends React.Component {
                       return (
                         <tr key={index}>
                           <td>{index + 1}</td>
-                          <td>{data.district}</td>
-                          <td>{data.confirmed}</td>
+                          <td style={{color:"grey"}} >{data.district}</td>
+                          <td>{data.confirmed}</td> 
+                          <td style={{color:"red"}}>{data.active}</td>
+                          <td style={{color:"green"}}>{data.recovered}</td>
                         </tr>
                       );
                     })}
